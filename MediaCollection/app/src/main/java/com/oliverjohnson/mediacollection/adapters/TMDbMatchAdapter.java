@@ -60,7 +60,7 @@ public class TMDbMatchAdapter extends ArrayAdapter<MediaObject> {
             description.setText(match.getDescription().substring(0, descriptionCharLimit-1) + "...");
         else
             description.setText(match.getDescription());
-        MediaQueryHandler.getPoster(poster, match.getPosterPath(), (Activity) getContext());
+        MediaQueryHandler.getPoster(MediaQueryHandler.ImageSize.w500, poster, match.getPosterPath(), (Activity) getContext());
 
         return view;
     }

@@ -33,6 +33,7 @@ import com.google.android.material.internal.NavigationMenu;
 import com.google.android.material.navigation.NavigationView;
 import com.oliverjohnson.mediacollection.datastructures.MediaObject;
 import com.oliverjohnson.mediacollection.datastructures.VolleyCallback;
+import com.oliverjohnson.mediacollection.fragments.AppInfoFragment;
 import com.oliverjohnson.mediacollection.fragments.CollectionFragment;
 import com.oliverjohnson.mediacollection.fragments.CreateNewDiscFragment;
 import com.oliverjohnson.mediacollection.fragments.SettingsFragment;
@@ -42,6 +43,17 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.security.KeyStore;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManagerFactory;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -55,6 +67,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+
+
+
+
 
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_nav_desc, R.string.close_nav_desc);
         drawerLayout.addDrawerListener(drawerToggle);
@@ -74,6 +90,9 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case R.id.settings_menu_item:
                         fragment = new SettingsFragment();
+                        break;
+                    case R.id.app_info_menu_item:
+                        fragment = new AppInfoFragment();
                         break;
                 }
 

@@ -45,14 +45,14 @@
                             android:translationZ="-10dp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_launcher_background" />
+                             />
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cardView2"
                             android:layout_width="139dp"
                             android:layout_height="203dp"
                             app:cardCornerRadius="10dp"
-                            app:contentPadding="5dp"
+                            app:contentPadding="0dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/disc_inspection_backdrop_image"
                             app:layout_constraintHorizontal_bias="0.03"
@@ -60,14 +60,26 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="1.0">
 
-                            <ImageView
-                                android:id="@+id/disc_inspection_poster_image"
-                                android:layout_width="131dp"
-                                android:layout_height="203dp"
-                                android:layout_weight="0.25"
-                                android:adjustViewBounds="true"
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
 
-                                app:srcCompat="@drawable/ic_launcher_background" />
+                                <ImageView
+                                    android:id="@+id/disc_inspection_poster_image"
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:layout_weight="0.25"
+                                    android:adjustViewBounds="true"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
                         </androidx.cardview.widget.CardView>
 
                         <TableLayout
@@ -90,7 +102,7 @@
                                     android:autoText="true"
                                     android:text="TITLE"
                                     android:textAlignment="center"
-                                    android:textSize="18sp"
+                                    android:textSize="30sp"
                                     android:textStyle="bold"
                                     app:autoSizeTextType="uniform" />
                             </TableRow>
@@ -121,10 +133,12 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:paddingStart="5dp"
                                     android:paddingTop="5dp"
-                                    android:paddingRight="15dp"
+                                    android:paddingEnd="5dp"
                                     android:text="TextView"
-                                    android:textAlignment="textEnd" />
+                                    android:textAlignment="textStart"
+                                    android:textStyle="bold" />
                             </TableRow>
 
                         </TableLayout>
@@ -170,8 +184,47 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.0" />
+
+                        <TextView
+                            android:id="@+id/genresTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:text="TextView"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/disc_inspection_vote_bar"
+                            app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/descriptionTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="loremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsum" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/availableDiscsRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp" />
                 </TableRow>
 
             </TableLayout>

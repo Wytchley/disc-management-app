@@ -3,6 +3,7 @@
     <string name="search_string">Search</string>
     <string name="collection_string">Collection</string>
     <string name="settings_string">Settings</string>
+    <string name="app_info_string">App Info</string>
     <string name="open_nav_desc">Open</string>
     <string name="close_nav_desc">Close</string>
 </resources>

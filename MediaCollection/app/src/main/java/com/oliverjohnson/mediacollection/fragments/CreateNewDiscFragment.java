@@ -1,37 +1,28 @@
 package com.oliverjohnson.mediacollection.fragments;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
-import android.app.Application;
 import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.oliverjohnson.mediacollection.MediaQueryHandler;
 import com.oliverjohnson.mediacollection.R;
-import com.oliverjohnson.mediacollection.adapters.DiscAdapter;
 import com.oliverjohnson.mediacollection.adapters.TMDbMatchAdapter;
 import com.oliverjohnson.mediacollection.datastructures.Disc;
 import com.oliverjohnson.mediacollection.datastructures.MediaObject;
 import com.oliverjohnson.mediacollection.datastructures.VolleyCallback;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
